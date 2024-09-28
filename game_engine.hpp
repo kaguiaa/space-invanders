@@ -6,7 +6,8 @@
 #include "bullet.hpp"
 #include <vector>
 #include <iostream>
-#include <conio.h>  // Для захвата клавиш в Windows
+#include <algorithm>
+#include <windows.h>
 
 // Основной движок игры, объединяющий все элементы (корабль, враги, пули, игровое поле)
 class GameEngine {
@@ -26,9 +27,7 @@ public:
     }
 
     // Метод инициализации (можно добавить дополнительные настройки)
-    void Init() {
-        // Инициализация, если потребуется
-    }
+    void Init();
 
     // Основной игровой цикл
     void Run() {
@@ -44,7 +43,7 @@ public:
 private:
     // Метод для отрисовки игрового поля
     void Draw() {
-        system("cls");  // Очистка экрана (Windows)
+        system("clear");  // Очистка экрана (Windows)
 
         // Отрисовка верхней границы
         for (int i = 0; i < _board.GetWidth() + 2; i++) std::cout << "#";
@@ -87,7 +86,7 @@ private:
     }
 
     // Метод для обработки ввода с клавиатуры
-    void Input() {
+/*    void Input() {
         if (_kbhit()) {  // Проверка на нажатие клавиши
             switch (_getch()) {
                 case 'a':  // Движение влево
@@ -106,7 +105,9 @@ private:
                     break;
             }
         }
-    }
+    }*/
+
+    void Input();
 
     // Метод для обработки логики игры
     void Logic() {
