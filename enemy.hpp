@@ -1,5 +1,4 @@
 #pragma once
-
 #include "point.hpp"
 
 // Класс врага, управляющий его позицией и состоянием (жив/мертв)
@@ -10,22 +9,14 @@ public:
     Enemy(const Point& position) : _position(position), _isAlive(true) {}  // Конструктор врага с установкой позиции и состоянием "жив"
 
     // Возвращает текущую позицию врага
-    Point GetPosition() const {
-        return _position;
-    }
+    Point GetPosition() const;
 
     // Перемещает врага вниз
-    void MoveDown() {
-        _position.y++;
-    }
+    void MoveDown();
 
     // Проверяет, жив ли враг
-    bool IsAlive() const {
-        return _isAlive;
-    }
+    bool IsAlive() const;
 
     // Уничтожает врага (меняет его состояние на "мертв")
-    void Destroy() {
-        _isAlive = false;
-    }
+    void Destroy();
 };

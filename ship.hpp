@@ -1,32 +1,20 @@
 #pragma once
-
 #include "point.hpp"
 #include "bullet.hpp"
 
-// Класс корабля игрока, управляющий его движением и стрельбой
+// Класс для корабля
 class Ship {
-    Point _position;  // Текущая позиция корабля
+    Point _position;  // Позиция корабля
 public:
-    // Конструктор корабля с установкой позиции по умолчанию
-    Ship() : _position({10, 20}) {}
-
-    // Возвращает текущую позицию корабля
-    Point GetPosition() const {
-        return _position;
-    }
+    // Конструктор
+    Ship(const Point& position) : _position(position) {}
 
     // Двигает корабль влево
-    void MoveLeft() {
-        if (_position.x > 0) _position.x--;
-    }
+    void MoveLeft();
 
     // Двигает корабль вправо
-    void MoveRight() {
-        if (_position.x < 19) _position.x++;
-    }
+    void MoveRight();
 
-    // Стреляет пулей, создавая новую пулю перед кораблем
-    Bullet Shoot() const {
-        return Bullet({ _position.x, _position.y - 1 });
-    }
+    // Стреляет с позиции корабля
+    Bullet Shoot() const;
 };
