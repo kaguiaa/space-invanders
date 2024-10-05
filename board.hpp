@@ -5,16 +5,17 @@ class Board {
     int _width;   // Ширина игрового поля
     int _height;  // Высота игрового поля
 public:
-    // Конструктор поля с указанием ширины и высоты
-    Board(int width = 20, int height = 20) : _width(width), _height(height) {}
+    // Конструктор с параметрами (по умолчанию 20x20)
+    Board(int width = 20, int height = 20);
 
-    // Возвращает ширину игрового поля
-    int GetWidth() const {
-        return _width;
-    }
+    // Метод для получения ширины
+    int GetWidth() const;
 
-    // Возвращает высоту игрового поля
-    int GetHeight() const {
-        return _height;
-    }
+    // Метод для получения высоты
+    int GetHeight() const;
 };
+
+
+  
+
+  

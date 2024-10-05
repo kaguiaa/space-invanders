@@ -1,34 +1,21 @@
 #pragma once
-
 #include "point.hpp"
 
-// Класс пули, который хранит ее позицию и активность
 class Bullet {
-    Point _position;  // Текущая позиция пули
-    bool _isActive;   // Флаг, активна ли пуля
+    Point _position;
+    bool _isActive;
 public:
-    Bullet() : _isActive(false) {}  // Конструктор по умолчанию, пуля неактивна
-    Bullet(const Point& position) : _position(position), _isActive(true) {}  // Конструктор с установкой позиции и активацией пули
-
-    // Метод для перемещения пули вверх
-    void MoveUp() {
-        if (_isActive) {
-            _position.y--;
-        }
-    }
-
-    // Возвращает текущую позицию пули
-    Point GetPosition() const {
-        return _position;
-    }
-
-    // Проверяет, активна ли пуля
-    bool IsActive() const {
-        return _isActive;
-    }
-
-    // Деактивирует пулю
-    void Deactivate() {
-        _isActive = false;
-    }
+    Bullet();
+    Bullet(const Point& position);
+    void MoveUp();
+    Point GetPosition() const;
+    bool IsActive() const;
+    void Deactivate();
+    
+    // Операторы сравнения, копирования, ввода/вывода
+    bool operator==(const Bullet& other) const;
+    Bullet& operator=(const Bullet& other);
+    friend std::istream& operator>>(std::istream& in, Bullet& bullet);
+    friend std::ostream& operator<<(std::ostream& out, const Bullet& bullet);
 };
+
