@@ -6,8 +6,9 @@
 class Ship {
     Point _position;  // Позиция корабля
 public:
+    Ship()  = default;
     // Конструктор
-    Ship(const Point& position) : _position(position) {}
+    Ship(const Point& position);
 
     // Двигает корабль влево
     void MoveLeft();
@@ -17,4 +18,6 @@ public:
 
     // Стреляет с позиции корабля
     Bullet Shoot() const;
+
+    Point GetPosition() const;
 };

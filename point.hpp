@@ -7,9 +7,7 @@ struct Point {
     int y; // Y-координата
 
     // Оператор сравнения для Point
-    bool operator==(const Point& other) const {
-        return x == other.x && y == other.y; // Сравнение координат
-    }
+    bool operator==(const Point& other) const;
 
     // Операторы ввода и вывода
     friend std::istream& operator>>(std::istream& in, Point& point);

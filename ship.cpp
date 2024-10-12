@@ -1,5 +1,6 @@
 #include "ship.hpp"
 
+Ship::Ship(const Point& position) : _position(position) {}
 // Перемещает корабль влево
 void Ship::MoveLeft() {
     if (_position.x > 0) _position.x--;  // Уменьшает координату x, если это возможно
@@ -14,3 +15,7 @@ void Ship::MoveRight() {
 Bullet Ship::Shoot() const {
     return Bullet({ _position.x, _position.y - 1 });  // Создает снаряд на позиции выше корабля
 }
+ 
+ Point Ship::GetPosition() const{
+    return _position;
+ }
