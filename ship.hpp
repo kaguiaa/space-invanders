@@ -1,10 +1,12 @@
 #pragma once
 #include "point.hpp"
 #include "bullet.hpp"
+#include <string>
 
 // Класс для корабля
 class Ship {
-    Point _position;  // Позиция корабля
+    Point _position; 
+    std::string _name;
 public:
     Ship()  = default;
     // Конструктор
